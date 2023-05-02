@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Navber = () => {
   return (
-    <div className="bg-fuchsia-700">
-      <div className=" bg-fuchsia-700 flex justify-between items-center w-9/12 mx-auto bg-base-100 mb-10">
+    <div className="bg-[#7e4929]">
+      <div className=" bg-[#7e4a295c] flex justify-between items-center w-9/12 mx-auto bg-base-100 ">
         {/* logo  */}
         <div className="">
           <Link href="">
-            <img className="w-24 pt-2" src={logo} alt="Cookdesh" />
+            <img className="  w-24 pt-2" src={logo} alt="Cookdesh" />
           </Link>
         </div>
 
