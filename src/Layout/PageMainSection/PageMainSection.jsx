@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CheifDataMainPage from "./CheifDataMainPage";
 
 const PageMainSection = () => {
   const [cheifList, setCheifList] = useState([]);
@@ -6,35 +7,15 @@ const PageMainSection = () => {
   useEffect(() => {
     fetch("http://localhost:5000/cheif")
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => setCheifList(data))
       .catch((error) => console.error(error));
   });
 
   return (
-    <div>
-      <h1>this is main section</h1>
-
-      <div className="w-9/12 mx-auto mt-8">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">Fashion</div>
-              <div className="badge badge-outline">Products</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="grid grid-cols-3 mb-6 w-9/12 mx-auto gap-20 mt-6">
+      {cheifList.map((chef) => (
+        <CheifDataMainPage key={chef.id} chef={chef}></CheifDataMainPage>
+      ))}
     </div>
   );
 };
