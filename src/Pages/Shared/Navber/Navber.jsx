@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Navber = () => {
   return (
-    <div className="bg-[#7e4929]">
-      <div className=" bg-[#7e4a295c] flex justify-between items-center w-9/12 mx-auto bg-base-100 ">
+    <div className="bg-[#363a3b]">
+      <div className=" bg-[#363a3b] hover:bg-text-slate-400 flex justify-between items-center w-9/12 mx-auto bg-base-100 ">
         {/* logo  */}
         <div className="">
           <Link href="">

@@ -1,8 +1,7 @@
-.CookdeshTitle{
+/* .CookdeshTitle{
     position: absolute;
     top: 30%;
     left: 50%;
-    /* transform: translate(-50%, -50%), */
     transform: translate(-50%,-50%);
     color: white;
     font-size: 200px;
@@ -13,7 +12,7 @@
 
 
 
-/* For screens smaller than 768px */
+
 @media (max-width: 767px) {
     .CookdeshTitle{
     font-size: 36px;
@@ -29,7 +28,7 @@
     }
   }
   
-  /* For screens between 768px and 1024px */
+
   @media (min-width: 768px) and (max-width: 1023px) {
     .CookdeshTitle {
       font-size: 100px;
@@ -46,13 +45,39 @@
   }
   
   /* For screens larger than 1024px */
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     .CookdeshTitle {
       font-size: 200px;
     }
     .description {
       font-size: 16px ;
     }
-  }
+  } */
   
+ 
 
+/*header and  styles*/
+.banner-content {
+    text-align: left;
+
+}
+
+.header-banner {
+    background-image: url('../../../assets/banner2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 150px;
+    background-position: bottom right, left top;
+   
+}
+
+.banner-title {
+    font-weight: 700;
+    font-size: 65px;
+}
+
+.banner-discription {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 24px 0 32px;
+}
