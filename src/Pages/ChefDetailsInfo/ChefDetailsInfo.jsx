@@ -1,34 +1,72 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import "./ChefDetailsInfo.css";
+import { HiHandThumbUp } from "react-icons/hi2";
 
 const ChefDetailsInfo = () => {
-  const signleForid = useLoaderData();
-  console.log(signleForid);
+  const signleChefInfo = useLoaderData();
+
   return (
-    <div>
-      <div>
-        <div className="header-banner">
-          <div className="banner-content">
-            <h1 className="text-3xl md:text-7xl font-bold py-12">
-              <span className="text-white "> WELCOME TO</span> <br />
-              <span className="hover:text-green-700">COOKDESH</span>
-              <br /> RESTAURANT
-            </h1>
-            <p className=" text-xs font-medium my-6 mr-8">
-              Welcome to CookDesh Restaurant, located in Deptford, New Jersey,
-              just minutes from Cherry Hill and Philadelphia. <br /> We are your
-              proud hosts for elegant weddings, fine dining and memorable
-              events, <br />
-              and have been for the last three decades. We proudly extend to you
-              our reputation for great food, <br /> professional and friendly
-              staff, spacious accommodations and a popular lounge.
-            </p>
-            <button className="btn btn-active btn-secondary">
-              Join With Us
-            </button>
+    <div className="">
+      <div className=" bg-slate-100 w-9/12 mx-auto grid md:grid-cols-2 p-28 shadow-inner hover:shadow-lg ">
+        {/* img div  */}
+        <div>
+          <img src={signleChefInfo.picture} alt="" />
+          <h1 className=" text-5xl font-bold text-center">
+            {signleChefInfo.name}
+          </h1>
+        </div>
+        {/* details div  */}
+        <div className="md:py-20">
+          <h1 className=" text-3xl font-semibold text-red-600">
+            {signleChefInfo.rank}
+          </h1>
+
+          <p className="font-serif my-2">
+            <span className="text-red-600 font-medium">Chef Bio:</span>
+            {signleChefInfo.chef_bio}
+          </p>
+
+          <h4 className="text-1xl ">
+            Years Of Experience:{" "}
+            <span className="text-red-600 font-bold">
+              {signleChefInfo.years_of_experience}
+            </span>
+          </h4>
+
+          <div className="md:flex md:justify-between">
+            <h4 className="text-1xl ">
+              Years Of Experience:{" "}
+              <span className="text-red-600 font-bold">
+                {signleChefInfo.num_of_recipes}
+              </span>
+            </h4>
+            <div className="md:flex items-center gap-1">
+              <p>{signleChefInfo.likes}</p>
+              <HiHandThumbUp className="" />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* card setting */}
+
+      <section>
+        <div>
+          <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{signleChefInfo.recipes[0].name}</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
