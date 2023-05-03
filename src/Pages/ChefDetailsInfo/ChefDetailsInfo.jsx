@@ -8,7 +8,7 @@ const ChefDetailsInfo = () => {
 
   return (
     <div className="">
-      <div className=" bg-slate-100 w-9/12 mx-auto grid md:grid-cols-2 p-28 shadow-inner hover:shadow-lg ">
+      <div className=" bg-slate-100 md:w-9/12 mx-auto md:grid md:grid-cols-2 p-28 shadow-inner hover:shadow-lg ">
         {/* img div  */}
         <div>
           <img src={signleChefInfo.picture} alt="" />
@@ -52,16 +52,65 @@ const ChefDetailsInfo = () => {
       {/* card setting */}
 
       <section>
-        <div>
-          <div className="card card-compact w-96 bg-base-100 shadow-xl">
-            <figure>
-              <img src="" />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{signleChefInfo.recipes[0].name}</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+        <div className=" md:w-10/12 mx-auto my-10 ">
+          <div className="md:grid grid-cols-3 ">
+            {/* card details  */}
+            <div className="card card-compact border w-96 bg-base-100 shadow-xl">
+              <figure>
+                <img className="p-6" src={signleChefInfo.recipes[0].img} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{signleChefInfo.recipes[0].name}</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+
+                <p>Ingredients: {signleChefInfo.recipes[0].ingredients}</p>
+                <p className="border p-2 ">
+                  Cooking Method: {signleChefInfo.recipes[0].cooking_method}
+                </p>
+                <div className="card-actions justify-end">
+                  <p>{signleChefInfo.recipes[0]?.rating}</p>
+                  <button className="btn btn-primary ">Favorite</button>
+                </div>
+              </div>
+            </div>
+
+            {/* 2nd card  */}
+            <div className="card card-compact border w-96 bg-base-100 shadow-xl">
+              <figure>
+                <img className="p-6" src={signleChefInfo.recipes[1].img} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{signleChefInfo.recipes[1].name}</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+
+                <p>Ingredients: {signleChefInfo.recipes[1].ingredients}</p>
+                <p className="border p-2 ">
+                  Cooking Method: {signleChefInfo.recipes[1].cooking_method}
+                </p>
+                <div className="card-actions justify-end">
+                  <p>{signleChefInfo.recipes[1]?.rating}</p>
+                  <button className="btn btn-primary ">Favorite</button>
+                </div>
+              </div>
+            </div>
+
+            {/* 3rd card */}
+            <div className="card card-compact border w-96 bg-base-100 shadow-xl">
+              <figure>
+                <img className="p-6" src={signleChefInfo.recipes[2].img} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{signleChefInfo.recipes[2].name}</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+
+                <p>Ingredients: {signleChefInfo.recipes[2].ingredients}</p>
+                <p className="border p-2 ">
+                  Cooking Method: {signleChefInfo.recipes[2].cooking_method}
+                </p>
+                <div className="card-actions justify-end">
+                  <p>{signleChefInfo.recipes[2]?.rating}</p>
+                  <button className="btn btn-primary ">Favorite</button>
+                </div>
               </div>
             </div>
           </div>
