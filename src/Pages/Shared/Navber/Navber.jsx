@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Navber = () => {
   return (
-    <div className="bg-[#363a3b] fixed w-full z-50">
-      <div className=" bg-[#363a3b] hover:bg-text-slate-400 flex justify-between items-center w-9/12 mx-auto bg-base-100 ">
+    <div className="bg-[#363a3b] bg-opacity-40 fixed w-full z-50">
+      <div className="   flex justify-between items-center w-9/12 mx-auto  ">
         {/* logo  */}
         <div className="">
           <Link href="">
@@ -16,11 +16,10 @@ const Navber = () => {
         {/* nav link  */}
         <div className="">
           <ul className="flex gap-4 text-white font-bold">
-            {" "}
             {/* Add justify-center here */}
-            <Link>Home</Link>
-            <Link>About</Link>
-            <Link>Blog</Link>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/blog">Blog</Link>
           </ul>
         </div>
         {/* profile img  */}

@@ -1,20 +1,17 @@
 import React from "react";
-import Navber from "../Navber/Navber";
 
 import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <Navber></Navber>
-
       <div className="header-banner">
         <div className="banner-content">
-          <h1 className="banner-title">
-            <span className="text-white"> WELCOME TO</span> <br />
+          <h1 className="text-3xl md:text-7xl font-bold py-12">
+            <span className="text-white "> WELCOME TO</span> <br />
             <span className="hover:text-green-700">COOKDESH</span>
             <br /> RESTAURANT
           </h1>
-          <p className="banner-discription">
+          <p className=" text-xs font-medium my-6 mr-8">
             Welcome to CookDesh Restaurant, located in Deptford, New Jersey,
             just minutes from Cherry Hill and Philadelphia. <br /> We are your
             proud hosts for elegant weddings, fine dining and memorable events,{" "}

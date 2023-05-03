@@ -1,13 +1,15 @@
 import React from "react";
 import Header from "../Pages/Shared/Header/Header";
 import Footer from "../Pages/Shared/Footer/Footer";
-import PageMainSection from "./PageMainSection/PageMainSection";
+
+import { Outlet } from "react-router-dom";
+import Navber from "../Pages/Shared/Navber/Navber";
 
 const Main = () => {
   return (
     <div>
-      <Header></Header>
-      <PageMainSection></PageMainSection>
+      <Navber></Navber>
+      <Outlet></Outlet>
       <Footer></Footer>
     </div>
   );
