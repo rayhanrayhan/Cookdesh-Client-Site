@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
@@ -20,7 +21,9 @@ const Header = () => {
             our reputation for great food, <br /> professional and friendly
             staff, spacious accommodations and a popular lounge.
           </p>
-          <button className="btn btn-active btn-secondary">Join With Us</button>
+          <Link to="/register" className="btn btn-active btn-secondary">
+            Join With Us
+          </Link>
         </div>
       </div>
     </div>
