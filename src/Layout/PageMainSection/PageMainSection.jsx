@@ -12,7 +12,7 @@ const PageMainSection = () => {
   });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 w-9/12 mx-auto gap-20 mt-6 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 w-full  md:w-9/12 md:mx-auto  gap-6 mt-6  container ">
       {cheifList.map((chef) => (
         <CheifDataMainPage key={chef.id} chef={chef}></CheifDataMainPage>
       ))}

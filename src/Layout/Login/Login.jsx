@@ -1,52 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  getAuth,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import app from "../../firebase/firebase.config";
+import { AuthContext } from "../../Providor/AuthProvider";
 
 const Login = () => {
-  const [user, setUser] = useState(null);
-  const auth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { signInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const handleSignInWithGoogle = () => {
+    googleSignIn()
+      .then((res) => {})
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+  const handleSignInWithGitHub = () => {
+    gitHubSignIn()
+      .then((res) => {})
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
-  const handleSignInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.error(error);
-      setError("Failed to sign in with Google");
-    }
-  };
-
-  const handleSignInWithGitHub = async () => {
-    try {
-      await signInWithPopup(auth, githubProvider);
-    } catch (error) {
-      console.error(error);
-      setError("Failed to sign in with GitHub");
-    }
-  };
-
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
     // Validation
     if (email === "" || password === "") {
@@ -57,20 +36,13 @@ const Login = () => {
       setError("Password must be at least 6 characters long");
       return;
     }
-
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      setUser(userCredential.user.uid);
-      setEmail("");
-      setPassword("");
-    } catch (error) {
-      console.error(error);
-      setError("Failed to sign in with email and password");
-    }
+    signInUser(email, password)
+      .then((res) => {
+        form.reset();
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -86,8 +58,7 @@ const Login = () => {
               type="email"
               id="email"
               className="border border-gray-400 p-2 w-full"
-              value={email}
-              onChange={handleEmailChange}
+              name="email"
               required
             />
           </div>
@@ -99,8 +70,7 @@ const Login = () => {
               type="password"
               id="password"
               className="border border-gray-400 p-2 w-full"
-              value={password}
-              onChange={handlePasswordChange}
+              name="password"
               required
             />
           </div>

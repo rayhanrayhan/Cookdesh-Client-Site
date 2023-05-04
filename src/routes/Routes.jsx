@@ -5,22 +5,20 @@ import "./../App.css";
 import ChefDetailsInfo from "../Pages/ChefDetailsInfo/ChefDetailsInfo";
 
 import Blog from "../Pages/Blog/Blog";
-import About from "../Pages/About/About";
+
 import Login from "../Layout/Login/Login";
 import Register from "../Layout/Register/Register";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <Error></Error>,
     element: <Main></Main>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-      },
-      {
-        path: "/about",
-        element: <About></About>,
       },
       {
         path: "/login",
