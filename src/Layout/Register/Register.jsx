@@ -79,6 +79,12 @@ const Register = () => {
         photoURL: photoURL,
       });
       setUser(userCredential.user.uid);
+
+      // clear fields
+      setName("");
+      setEmail("");
+      setPassword("");
+      setPhotoURL("");
     } catch (error) {
       console.error(error);
       setError("Failed to create an account");

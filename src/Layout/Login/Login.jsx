@@ -65,6 +65,8 @@ const Login = () => {
         password
       );
       setUser(userCredential.user.uid);
+      setEmail("");
+      setPassword("");
     } catch (error) {
       console.error(error);
       setError("Failed to sign in with email and password");
