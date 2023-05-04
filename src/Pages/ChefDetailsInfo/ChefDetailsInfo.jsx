@@ -87,7 +87,12 @@ const ChefDetailsInfo = () => {
                     Cooking Method: {signleChefInfo.recipes[0].cooking_method}
                   </p>
                   <div className="card-actions justify-end">
-                    <p>{signleChefInfo.recipes[0]?.rating}</p>
+                    <p>
+                      Rating:{" "}
+                      <span className="text-red-600">
+                        {signleChefInfo.recipes[0]?.rating}
+                      </span>
+                    </p>
                     <button onClick={notify} className="btn btn-primary ">
                       Favorite
                     </button>
@@ -111,7 +116,12 @@ const ChefDetailsInfo = () => {
                     Cooking Method: {signleChefInfo.recipes[1].cooking_method}
                   </p>
                   <div className="card-actions justify-end">
-                    <p>{signleChefInfo.recipes[1]?.rating}</p>
+                    <p>
+                      Rating:{" "}
+                      <span className="text-red-600">
+                        {signleChefInfo.recipes[1]?.rating}
+                      </span>
+                    </p>
                     <button onClick={notify} className="btn btn-primary ">
                       Favorite
                     </button>
@@ -136,7 +146,12 @@ const ChefDetailsInfo = () => {
                     Cooking Method: {signleChefInfo.recipes[2].cooking_method}
                   </p>
                   <div className="card-actions justify-end">
-                    <p>{signleChefInfo.recipes[2]?.rating}</p>
+                    <p>
+                      Rating:{" "}
+                      <span className="text-red-600">
+                        {signleChefInfo.recipes[2]?.rating}
+                      </span>
+                    </p>
                     <button onClick={notify} className="btn btn-primary ">
                       Favorite
                     </button>

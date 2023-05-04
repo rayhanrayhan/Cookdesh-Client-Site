@@ -6,7 +6,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const { signInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+  const { signInUser, googleSignIn, gitHubSignIn, setLoading } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const handleSignInWithGoogle = () => {
     googleSignIn()
@@ -46,6 +47,7 @@ const Login = () => {
       })
       .catch((error) => {
         setError(error.message);
+        setLoading(false);
       });
   };
 

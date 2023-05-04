@@ -1,9 +1,11 @@
 import React from "react";
+import Downloadpdf from "./Downloadpdf";
 
 const Blog = () => {
   return (
-    <div>
+    <div className="p-16" id="component-to-pdf">
       <div className="p-12">
+        <Downloadpdf></Downloadpdf>
         <div className=" grid grid-cols-1 md:grid-cols-2 w-9/12 mx-auto my-10 gap-4">
           <div className=" border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
             <h3 className="text-2xl font-semibold">

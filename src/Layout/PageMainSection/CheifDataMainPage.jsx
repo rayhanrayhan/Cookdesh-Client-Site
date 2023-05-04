@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import { HiHandThumbUp } from "react-icons/hi2";
+import LazyLoad from "react-lazyload";
 
 const CheifDataMainPage = ({ chef }) => {
   const {
@@ -20,7 +21,9 @@ const CheifDataMainPage = ({ chef }) => {
         <div>
           <div className="card w-96 bg-base-100 hover:shadow-2xl hover:shadow-slate-600-100 shadow-inner ease-in-out duration-300">
             <figure>
-              <img src={picture} alt="" />
+              <LazyLoad offset={120}>
+                <img src={picture} alt="" />
+              </LazyLoad>
             </figure>
             <div className="card-body ">
               <h2 className="card-title text-red-600  font-bold">{name}</h2>
