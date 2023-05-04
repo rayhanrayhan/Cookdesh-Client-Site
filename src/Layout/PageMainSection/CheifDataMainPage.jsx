@@ -17,7 +17,7 @@ const CheifDataMainPage = ({ chef }) => {
   return (
     <div>
       <div>
-        <div className="">
+        <div>
           <div className="card w-96 bg-base-100 hover:shadow-2xl hover:shadow-slate-600-100 shadow-inner ease-in-out duration-300">
             <figure>
               <img src={picture} alt="" />
