@@ -6,6 +6,7 @@ import ChefDetailsInfo from "../Pages/ChefDetailsInfo/ChefDetailsInfo";
 
 import Blog from "../Pages/Blog/Blog";
 import About from "../Pages/About/About";
+import Login from "../Layout/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
       {
         path: "/blog",
