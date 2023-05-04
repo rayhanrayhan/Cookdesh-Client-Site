@@ -75,7 +75,7 @@ const SectionOne = () => {
                       </li>
                       <li>4. Toss to combine and serve.</li>
                     </ul>
-                    <button className="btn btn-primary ">View</button>
+                    <button className="btn btn-primary ">View More</button>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const SectionOne = () => {
                     <li>4. Toss to combine and serve.</li>
                   </ul>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary ">Favorite</button>
+                    <button className="btn btn-primary ">View More</button>
                   </div>
                 </div>
               </div>

@@ -9,6 +9,7 @@ import Blog from "../Pages/Blog/Blog";
 import Login from "../Layout/Login/Login";
 import Register from "../Layout/Register/Register";
 import Error from "../Pages/Error/Error";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: "chef/:id",
-        element: <ChefDetailsInfo></ChefDetailsInfo>,
+        element: (
+          <PrivetRoutes>
+            <ChefDetailsInfo></ChefDetailsInfo>
+          </PrivetRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chef/${params.id}`),
       },
