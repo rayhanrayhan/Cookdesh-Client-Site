@@ -9,11 +9,14 @@ const SectionOne = () => {
             {/* card details  */}
             <div>
               <div className="card card-compact border    shadow-xl">
+                <p className="text-3xl p-1 font-bold font-serif text-center text-red-800">
+                  Fast Food Items
+                </p>
                 <figure>
                   <img className="p-6" src="https://i.ibb.co/P6VhWbk/55.png" />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">Nova Scotia Lobster Salad</h2>
+                  <h2 className="card-title">Nova Scotia Canadian Noodles</h2>
 
                   <div className="card-actions justify-end">
                     <p className=" p-2 ">Cooking Method:</p>
@@ -34,7 +37,7 @@ const SectionOne = () => {
                       </li>
                       <li>4. Toss to combine and serve.</li>
                     </ul>
-                    <button className="btn btn-primary ">Favorite</button>
+                    <button className="btn btn-primary ">View More</button>
                   </div>
                 </div>
               </div>
@@ -42,6 +45,9 @@ const SectionOne = () => {
             {/* card details  */}
             <div>
               <div className="card card-compact border  shadow-xl">
+                <p className="text-3xl p-1 font-bold font-serif text-center text-red-800">
+                  Fish Recioes
+                </p>
                 <figure>
                   <img className="p-6" src="https://i.ibb.co/w75PnMy/33.png" />
                 </figure>
@@ -69,7 +75,7 @@ const SectionOne = () => {
                       </li>
                       <li>4. Toss to combine and serve.</li>
                     </ul>
-                    <button className="btn btn-primary ">Favorite</button>
+                    <button className="btn btn-primary ">View More</button>
                   </div>
                 </div>
               </div>
@@ -78,7 +84,10 @@ const SectionOne = () => {
             {/* card details  */}
 
             <div>
-              <div className="card card-compact border  shadow-xl">
+              <div className="p-1 card card-compact border  shadow-xl">
+                <p className="text-3xl font-bold font-serif text-center text-red-800">
+                  Yammi salads
+                </p>
                 <figure>
                   <img className="p-6" src="https://i.ibb.co/QQc7B6V/11.png" />
                 </figure>
@@ -103,8 +112,7 @@ const SectionOne = () => {
                     <li>4. Toss to combine and serve.</li>
                   </ul>
                   <div className="card-actions justify-end">
-                    <p></p>
-                    <button className="btn btn-primary ">Favorite</button>
+                    <button className="btn btn-primary ">View More</button>
                   </div>
                 </div>
               </div>
