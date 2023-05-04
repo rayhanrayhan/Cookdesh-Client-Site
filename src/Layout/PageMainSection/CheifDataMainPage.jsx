@@ -40,7 +40,7 @@ const CheifDataMainPage = ({ chef }) => {
               <div className="card-actions justify-end">
                 {/* <div className="badge badge-outline">Fashion</div> */}
                 <Link to={`chef/${id}`}>
-                  <button className="btn btn-outline btn-info px-6 my-2">
+                  <button className="btn btn-primary  px-6 my-2">
                     View Recipee
                   </button>
                 </Link>

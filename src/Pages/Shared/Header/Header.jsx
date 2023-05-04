@@ -21,7 +21,7 @@ const Header = () => {
             our reputation for great food, <br /> professional and friendly
             staff, spacious accommodations and a popular lounge.
           </p>
-          <Link to="/register" className="btn btn-active btn-secondary">
+          <Link to="/register" className="btn btn-primary ">
             Join With Us
           </Link>
         </div>

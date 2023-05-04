@@ -21,7 +21,7 @@ const SectionTwo = () => {
                   Freshly caught lobster, mixed greens, tomatoes, red onion, and
                   a tangy vinaigrette.
                 </p>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <button className="btn btn-primary px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   Order now
                 </button>
               </div>
@@ -43,7 +43,7 @@ const SectionTwo = () => {
                   Freshly grilled salmon with a zesty citrus salsa on top,
                   served with a side of rice and vegetables.
                 </p>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <button className="btn btn-primary px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   Order now
                 </button>
               </div>
@@ -65,7 +65,7 @@ const SectionTwo = () => {
                   A refreshing salad with quinoa, kale, parsley, and feta
                   cheese, dressed with a light vinaigrette.
                 </p>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <button className="btn btn-primary px-4 py-2 rounded-full transition-colors duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   Order now
                 </button>
               </div>
