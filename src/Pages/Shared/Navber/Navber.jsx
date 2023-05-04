@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import logo from "./../../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providor/AuthProvider";
 
 const Navbar = ({ isLoggedIn, userName }) => {
@@ -20,8 +20,26 @@ const Navbar = ({ isLoggedIn, userName }) => {
         {/* nav link  */}
         <div className="">
           <ul className="flex justify-around gap-4 text-white font-bold">
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "block font-medium text-orange-400 text-lg"
+                  : "block font-medium text-lg"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                isActive
+                  ? "block font-medium text-orange-600 text-lg"
+                  : "block font-medium text-lg"
+              }
+            >
+              Blog
+            </NavLink>
             {user ? (
               <li>
                 <div
@@ -59,7 +77,16 @@ const Navbar = ({ isLoggedIn, userName }) => {
                 </div>
               </li>
             ) : (
-              <Link to="/login">Login</Link>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block font-medium text-yellow-500 text-lg"
+                    : "block font-medium text-lg"
+                }
+              >
+                Login
+              </NavLink>
             )}
           </ul>
         </div>
