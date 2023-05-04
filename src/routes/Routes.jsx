@@ -41,7 +41,9 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chef/${params.id}`),
+          fetch(
+            `https://cook-desh-clint-server-mdrayhanuddinremon02-gmailcom.vercel.app/chef/${params.id}`
+          ),
       },
     ],
   },

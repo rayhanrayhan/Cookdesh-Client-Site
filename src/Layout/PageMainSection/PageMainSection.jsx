@@ -5,7 +5,9 @@ const PageMainSection = () => {
   const [cheifList, setCheifList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/cheif")
+    fetch(
+      "https://cook-desh-clint-server-mdrayhanuddinremon02-gmailcom.vercel.app/cheif"
+    )
       .then((res) => res.json())
       .then((data) => setCheifList(data))
       .catch((error) => console.error(error));
