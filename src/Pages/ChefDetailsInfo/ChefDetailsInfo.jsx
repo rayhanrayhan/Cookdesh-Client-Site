@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import "./ChefDetailsInfo.css";
 import { HiHandThumbUp } from "react-icons/hi2";
@@ -7,8 +8,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ChefDetailsInfo = () => {
   const signleChefInfo = useLoaderData();
+  const [showToast, setShowToast] = useState(false);
 
-  const notify = () => toast("Add to Favorite!");
+  const notify = () => {
+    setShowToast(true);
+    toast.success("Added to favorites");
+  };
 
   return (
     <div>
@@ -93,9 +98,19 @@ const ChefDetailsInfo = () => {
                         {signleChefInfo.recipes[0]?.rating}
                       </span>
                     </p>
-                    <button onClick={notify} className="btn btn-primary ">
+                    {/* <button onClick={notify} className="btn btn-primary ">
                       Favorite
-                    </button>
+                    </button> */}
+                    <div>
+                      <button
+                        onClick={notify}
+                        className="btn btn-primary"
+                        disabled={showToast}
+                      >
+                        {showToast ? "Saved" : "Favorite"}
+                      </button>
+                      {showToast && <ToastContainer />}
+                    </div>
                   </div>
                 </div>
               </div>
