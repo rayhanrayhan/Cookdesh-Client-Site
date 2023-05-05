@@ -85,7 +85,6 @@ const ChefDetailsInfo = () => {
                   <h2 className="card-title">
                     {signleChefInfo.recipes[0].name}
                   </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
 
                   <p>Ingredients: {signleChefInfo.recipes[0].ingredients}</p>
                   <p className="border p-2 ">
@@ -95,7 +94,8 @@ const ChefDetailsInfo = () => {
                     <p>
                       Rating:{" "}
                       <span className="text-red-600">
-                        {signleChefInfo.recipes[0]?.rating}
+                        {signleChefInfo.recipes[0]?.rating}{" "}
+                        {/* Access the rating property of the first recipe */}
                       </span>
                     </p>
                     {/* <button onClick={notify} className="btn btn-primary ">
@@ -124,7 +124,6 @@ const ChefDetailsInfo = () => {
                   <h2 className="card-title">
                     {signleChefInfo.recipes[1].name}
                   </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
 
                   <p>Ingredients: {signleChefInfo.recipes[1].ingredients}</p>
                   <p className="border p-2 ">
@@ -154,7 +153,6 @@ const ChefDetailsInfo = () => {
                   <h2 className="card-title">
                     {signleChefInfo.recipes[2].name}
                   </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
 
                   <p>Ingredients: {signleChefInfo.recipes[2].ingredients}</p>
                   <p className="border p-2 ">
