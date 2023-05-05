@@ -5,11 +5,20 @@ import "./ChefDetailsInfo.css";
 import { HiHandThumbUp } from "react-icons/hi2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaStar } from "react-icons/fa";
+import { Rating, Star } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const ChefDetailsInfo = () => {
   const signleChefInfo = useLoaderData();
   const [showToast, setShowToast] = useState(false);
   const [disabledButtons, setDisabledButtons] = useState([]);
+
+  const myStyles = {
+    itemShapes: Star,
+    activeFillColor: "#f89223",
+    inactiveFillColor: "#fbf1a9",
+  };
 
   const handleFavorite = (recipeIndex) => {
     if (!disabledButtons.includes(recipeIndex)) {
@@ -95,17 +104,13 @@ const ChefDetailsInfo = () => {
                   <p className="border p-2 ">
                     Cooking Method: {signleChefInfo.recipes[0].cooking_method}
                   </p>
-                  <div className="card-actions justify-end">
-                    <p>
-                      Rating:{" "}
-                      <span className="text-red-600">
-                        {signleChefInfo.recipes[0]?.rating}{" "}
-                        {/* Access the rating property of the first recipe */}
-                      </span>
-                    </p>
-                    {/* <button onClick={notify} className="btn btn-primary ">
-                      Favorite
-                    </button> */}
+                  <div className="card-actions justify-between items-center">
+                    <Rating
+                      className="max-w-[80px]"
+                      readOnly
+                      value={signleChefInfo.recipes[0]?.rating}
+                      itemStyles={myStyles}
+                    />
                     <div>
                       <button
                         onClick={() => handleFavorite(0)}
@@ -134,13 +139,13 @@ const ChefDetailsInfo = () => {
                   <p className="border p-2 ">
                     Cooking Method: {signleChefInfo.recipes[1].cooking_method}
                   </p>
-                  <div className="card-actions justify-end">
-                    <p>
-                      Rating:{" "}
-                      <span className="text-red-600">
-                        {signleChefInfo.recipes[1]?.rating}
-                      </span>
-                    </p>
+                  <div className="card-actions justify-between items-center">
+                    <Rating
+                      className="max-w-[80px]"
+                      readOnly
+                      value={signleChefInfo.recipes[1]?.rating}
+                      itemStyles={myStyles}
+                    />
                     <div>
                       <button
                         onClick={() => handleFavorite(1)}
@@ -169,13 +174,13 @@ const ChefDetailsInfo = () => {
                   <p className="border p-2 ">
                     Cooking Method: {signleChefInfo.recipes[2].cooking_method}
                   </p>
-                  <div className="card-actions justify-end">
-                    <p>
-                      Rating:{" "}
-                      <span className="text-red-600">
-                        {signleChefInfo.recipes[2]?.rating}
-                      </span>
-                    </p>
+                  <div className="card-actions justify-between items-center">
+                    <Rating
+                      className="max-w-[80px]"
+                      readOnly
+                      value={signleChefInfo.recipes[2]?.rating}
+                      itemStyles={myStyles}
+                    />
                     <div>
                       <button
                         onClick={() => handleFavorite(2)}
