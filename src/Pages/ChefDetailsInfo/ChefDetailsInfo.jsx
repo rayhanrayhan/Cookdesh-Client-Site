@@ -9,10 +9,15 @@ import "react-toastify/dist/ReactToastify.css";
 const ChefDetailsInfo = () => {
   const signleChefInfo = useLoaderData();
   const [showToast, setShowToast] = useState(false);
+  const [disabledButtons, setDisabledButtons] = useState([]);
 
-  const notify = () => {
-    setShowToast(true);
-    toast.success("Added to favorites");
+  const handleFavorite = (recipeIndex) => {
+    if (!disabledButtons.includes(recipeIndex)) {
+      // add recipeIndex to the list of disabled buttons
+      setDisabledButtons([...disabledButtons, recipeIndex]);
+      setShowToast(true);
+      toast.success("Recipe added to favorites!");
+    }
   };
 
   return (
@@ -103,11 +108,11 @@ const ChefDetailsInfo = () => {
                     </button> */}
                     <div>
                       <button
-                        onClick={notify}
+                        onClick={() => handleFavorite(0)}
                         className="btn btn-primary"
-                        disabled={showToast}
+                        disabled={disabledButtons.includes(0)}
                       >
-                        {showToast ? "Saved" : "Favorite"}
+                        {disabledButtons.includes(0) ? "Saved" : "Favorite"}
                       </button>
                       {showToast && <ToastContainer />}
                     </div>
@@ -136,10 +141,16 @@ const ChefDetailsInfo = () => {
                         {signleChefInfo.recipes[1]?.rating}
                       </span>
                     </p>
-                    <button onClick={notify} className="btn btn-primary ">
-                      Favorite
-                    </button>
-                    <ToastContainer />
+                    <div>
+                      <button
+                        onClick={() => handleFavorite(1)}
+                        className="btn btn-primary"
+                        disabled={disabledButtons.includes(1)}
+                      >
+                        {disabledButtons.includes(1) ? "Saved" : "Favorite"}
+                      </button>
+                      {showToast && <ToastContainer />}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -165,9 +176,16 @@ const ChefDetailsInfo = () => {
                         {signleChefInfo.recipes[2]?.rating}
                       </span>
                     </p>
-                    <button onClick={notify} className="btn btn-primary ">
-                      Favorite
-                    </button>
+                    <div>
+                      <button
+                        onClick={() => handleFavorite(2)}
+                        className="btn btn-primary"
+                        disabled={disabledButtons.includes(2)}
+                      >
+                        {disabledButtons.includes(2) ? "Saved" : "Favorite"}
+                      </button>
+                      {showToast && <ToastContainer />}
+                    </div>
                   </div>
                 </div>
               </div>
