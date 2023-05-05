@@ -14,7 +14,7 @@ const Downloadpdf = () => {
   };
 
   return (
-    <button className="btn btn-primary" onClick={handleDownload}>
+    <button className="btn btn-primary mt-32 md:mt-0 " onClick={handleDownload}>
       Download Blogs PDF
     </button>
   );

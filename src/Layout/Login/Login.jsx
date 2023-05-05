@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providor/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,12 +10,13 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   const { signInUser, googleSignIn, gitHubSignIn, setLoading } =
     useContext(AuthContext);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); // create a state variable for the error message
+
   const handleSignInWithGoogle = () => {
     googleSignIn()
       .then((res) => {})
       .catch((error) => {
-        setError(error.message);
+        setError(error.message); // update the error message state variable
       });
   };
 
@@ -21,7 +24,7 @@ const Login = () => {
     gitHubSignIn()
       .then((res) => {})
       .catch((error) => {
-        setError(error.message);
+        setError(error.message); // update the error message state variable
       });
   };
 
@@ -33,21 +36,26 @@ const Login = () => {
 
     // Validation
     if (email === "" || password === "") {
-      setError("Please enter both email and password");
+      setError("Please enter both email and password"); // update the error message state variable
       return;
     }
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
+      setError("Password must be at least 6 characters long"); // update the error message state variable
       return;
     }
+    setLoading(true);
+
     signInUser(email, password)
       .then((res) => {
         form.reset();
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        setError(error.message);
+        // console.log("Invalid email or password");
+        form.reset();
         setLoading(false);
+        toast.error("Invalid email or password");
+        <ToastContainer />;
       });
   };
 
@@ -80,7 +88,8 @@ const Login = () => {
               required
             />
           </div>
-          {error && <div className="mb-5 text-red-500 font-bold">{error}</div>}
+          {error && <div className="mb-5 text-red-500 font-bold">{error}</div>}{" "}
+          {/* display the error message */}
           <button
             type="submit"
             className=" hover:bg-blue-700 btn btn-primary font-bold py-2 px-4 rounded"

@@ -3,11 +3,11 @@ import Downloadpdf from "./Downloadpdf";
 
 const Blog = () => {
   return (
-    <div className="p-16" id="component-to-pdf">
-      <div className="p-12">
+    <div className="p- md:p-16" id="component-to-pdf">
+      <div className="p-4 md:p-12">
         <Downloadpdf></Downloadpdf>
-        <div className=" grid grid-cols-1 md:grid-cols-2 w-9/12 mx-auto my-10 gap-4">
-          <div className=" border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 mx-auto my-10 gap-4">
+          <div className="border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
             <h3 className="text-2xl font-semibold">
               <span className="text-orange-400 "> Ques 01:</span> The
               differences between uncontrolled and controlled components.
@@ -31,7 +31,7 @@ const Blog = () => {
               validated and manipulated, but require more code to set up.
             </p>
           </div>
-          <div className=" border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
+          <div className="border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
             <h3 className="text-2xl font-semibold">
               <span className="text-orange-400 "> Ques 02:</span> How to
               validate React props using PropTypes ??
@@ -50,7 +50,7 @@ const Blog = () => {
               maintainability of your code.
             </p>
           </div>
-          <div className=" border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
+          <div className="border p-5 rounded border-rose-400 hover:shadow-lg hover:transition-all">
             <h3 className="text-2xl font-semibold">
               <span className="text-orange-400 "> Ques 03:</span> The difference
               between nodejs and express js.??

@@ -6,7 +6,7 @@ import { AuthContext } from "../../../Providor/AuthProvider";
 const Navbar = ({ isLoggedIn, userName }) => {
   const { user, logOut } = useContext(AuthContext);
   const [show, setShow] = useState(false);
-
+  console.log(user);
   return (
     <div className="bg-[#363a3b] bg-opacity-40 fixed w-full z-50">
       <div className="md:flex justify-between items-center w-11/12 mx-auto lg:w-9/12">

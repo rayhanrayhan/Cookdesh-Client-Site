@@ -1,8 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providor/AuthProvider";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const [error, setError] = useState("");
   const { createNewUser, upDateProfile, user } = useContext(AuthContext);
   const handleFormSubmit = (event) => {
@@ -23,16 +27,20 @@ const Register = () => {
       setError("Password must be at least 6 characters long");
       return;
     }
+    console.log(name, photo);
     createNewUser(email, password)
       .then((res) => {
-        upDateProfile(user, name, photo)
+        const newUser = res.user;
+        upDateProfile(newUser, name, photo)
           .then((res) => {
             console.log("profile Update");
           })
           .catch((error) => {
-            setError(error.message);
+            console.log(error.message);
           });
+
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
