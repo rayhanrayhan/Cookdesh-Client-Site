@@ -1,4 +1,4 @@
-# my 10th assignment the Live server link is: https://the-cook-desh-cooking-site.web.app
+# my 10th assignment the Live Site link is: https://the-cook-desh-cooking-site.web.app
 
 # project create list
 
