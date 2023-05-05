@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { HiHandThumbUp } from "react-icons/hi2";
 import LazyLoad from "react-lazyload";
 
@@ -18,40 +17,37 @@ const CheifDataMainPage = ({ chef }) => {
   return (
     <div>
       <div>
-        <div>
-          <div className="card w-96 bg-base-100 hover:shadow-2xl hover:shadow-slate-600-100 shadow-inner ease-in-out duration-300">
-            <figure>
-              <LazyLoad offset={120}>
-                <img src={picture} alt="" />
-              </LazyLoad>
-            </figure>
-            <div className="card-body ">
-              <h2 className="card-title text-red-600  font-bold">{name}</h2>
-              <p>
-                Experience:{" "}
-                <span className="text-red-600 font-semibold">
-                  {years_of_experience}
-                </span>
-              </p>
-              <p>{description}</p>
-              <p className="text-normal">
-                Numbers of recipes:{" "}
-                <span className="text-red-600 font-semibold">
-                  {num_of_recipes}
-                </span>
-              </p>
-              <div className="card-actions justify-end">
-                {/* <div className="badge badge-outline">Fashion</div> */}
-                <Link to={`chef/${id}`}>
-                  <button className="btn btn-primary  px-6 my-2">
-                    View Recipee
-                  </button>
-                </Link>
+        <div className="bg-base-100 hover:shadow-2xl hover:shadow-slate-600-100 shadow-inner ease-in-out duration-300">
+          <figure className="sm:w-full">
+            <LazyLoad offset={120}>
+              <img src={picture} alt="" className="w-full" />
+            </LazyLoad>
+          </figure>
+          <div className="p-4">
+            <h2 className="text-red-600 font-bold text-lg mb-2">{name}</h2>
+            <p className="text-sm mb-2">
+              Experience:{" "}
+              <span className="text-red-600 font-semibold">
+                {years_of_experience}
+              </span>
+            </p>
+            <p className="text-sm mb-4">{description}</p>
+            <p className="text-sm mb-2">
+              Numbers of recipes:{" "}
+              <span className="text-red-600 font-semibold">
+                {num_of_recipes}
+              </span>
+            </p>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center">
+                <HiHandThumbUp className="text-base mr-2" />
+                <p className="text-sm">{likes}</p>
               </div>
-            </div>
-            <div className="card-footer border p-4 flex gap-1 justify-end items-center ">
-              <p>{likes}</p>
-              <HiHandThumbUp className="" />
+              <Link to={`chef/${id}`}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  View Recipee
+                </button>
+              </Link>
             </div>
           </div>
         </div>
