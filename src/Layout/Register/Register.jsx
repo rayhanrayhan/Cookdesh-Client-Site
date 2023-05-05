@@ -97,6 +97,7 @@ const Register = () => {
               id="photoURL"
               className="border border-gray-400 p-2 w-full"
               name="photo"
+              required
             />
           </div>
           <div className="mb-5">

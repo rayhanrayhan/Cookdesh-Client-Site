@@ -76,8 +76,8 @@ const ChefDetailsInfo = () => {
                     {signleChefInfo.num_of_recipes}
                   </span>
                 </h4>
-                <div className="md:flex items-center gap-1">
-                  <p>{signleChefInfo.likes}</p>
+                <div className="md:flex items-center bg-white p-1 rounded gap-1">
+                  <p className="text-red-600 ">{signleChefInfo.likes}</p>
                   <HiHandThumbUp className="" />
                 </div>
               </div>

@@ -92,7 +92,7 @@ const SectionOne = () => {
             <div>
               <div className="card card-compact border shadow-xl">
                 <p className="text-3xl p-1 font-bold font-serif text-center text-red-800">
-                  Fish Recipes
+                  vegetable Recipes
                 </p>
                 <figure>
                   <img
